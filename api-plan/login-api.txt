@@ -1,0 +1,22 @@
+LOGIN:
+METHOD: POST
+{root.api}/{version}/auth/LOGIN
+
+request:
+{
+    "email": "test@gmail.com",
+    "password: "test123",
+}
+
+response: 
+{
+    "status": "success",
+    "message": "Login Succes"
+}
+
+error-response: 
+response code: 400
+{
+    "status": "fail",
+    "message": "Login Failed"
+}

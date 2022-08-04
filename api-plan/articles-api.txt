@@ -1,0 +1,79 @@
+ARTICLES:
+METHOD: POST
+{root.api}/{version}/posts/article
+
+request:
+{
+    "headline": "Breaking News",
+    "imgSrc": "img.png",
+    "content": "Lorem ipsum",
+}
+
+response:
+response code: 201
+{
+    "status": "success",
+    "message: "article succesfully created",
+    "data": {
+        articleId: "1",
+    }
+}
+
+error-response:
+response code: 500
+{
+    "status": "failed",
+    "message": "Internal server error"
+}
+
+METHOD: GET
+{root.api}/{version}/posts/articles
+
+response:
+response code: 200
+[
+    {
+        "articleId": "1"
+        "headline": "Breaking News",
+        "imgSrc": "img.png",
+        "content": "Lorem ipsum"
+        "postedAt": "{Date.toIsoString}"
+        "updatedAt": "{Date.toIsoString}"
+    },
+    {
+        "articleId": "2"
+        "headline": "Breaking News",
+        "imgSrc": "img.png",
+        "content": "Lorem ipsum"
+        "postedAt": "{Date.toIsoString}"
+        "updatedAt": "{Date.toIsoString}"
+    }
+]
+
+error-response:
+response code: 500
+{
+    "status": "failed",
+    "message": "Internal server error"
+}
+
+METHOD: GET
+{root.api}/{version}/posts/article/{id}
+
+response:
+response code: 200
+{
+    "articleId": "1",
+    "headline": "Breaking News",
+    "imgSrc": "img.png",
+    "content": "Lorem ipsum"
+    "postedAt": "{Date.toIsoString}"
+    "updatedAt": "{Date.toIsoString}"
+}
+
+error-response:
+response code: 404
+{
+    "message: "Article not found",
+    "data": null
+}

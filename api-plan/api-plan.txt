@@ -1,0 +1,16 @@
+API Standard
+
+{root.api}/{version}/{group}/{endpoint}
+example:
+http://kabarkabaran.com/v1/articles/articles
+
+Standard status response:
+200 - OK                        --> API Calling success
+201 - Created                   --> Post success
+400 - Bad Request               --> Error on client side (invalid input etc.)
+401 - Unauthorized              --> User not authorized for the API
+403 - Forbidden                 --> User not allowed to access the API
+404 - Not Found                 --> Endpoint not Found
+500 - Internal Server Error     --> Error on server side
+502 - Bad Gateway               --> Invalid response from another request
+
